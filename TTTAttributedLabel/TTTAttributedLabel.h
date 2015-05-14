@@ -20,6 +20,23 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+/**
+ * IB_DESIGNABLE and IBInspectable do not function from within a static library.
+ * If you're keen on using those annotations, you should either
+ * - import TTTAttributedLabel as a dynamic framework
+ * - import TTTAttributedLabel by dragging its files to your project.
+ * If you do use TTTAttributedLabel as a static library, you may add
+ * #define TTT_NO_DESIGNABLE
+ * to e.g. your class prefix to suppress designable and inspectable annotations.
+ */
+#ifdef TTT_NO_DESIGNABLE
+# define TTTDesignable
+# define TTTInspectable
+#else
+# define TTTDesignable  IB_DESIGNABLE
+# define TTTInspectable IBInspectable
+#endif
+
 #import <UIKit/UIKit.h>
 #import <CoreText/CoreText.h>
 
@@ -71,7 +88,7 @@ extern NSString * const kTTTBackgroundCornerRadiusAttributeName;
 @property (nonatomic, copy) id text;
 @end
 
-IB_DESIGNABLE
+TTTDesignable
 
 /**
  `TTTAttributedLabel` is a drop-in replacement for `UILabel` that supports `NSAttributedString`, as well as automatically-detected and manually-added links to URLs, addresses, phone numbers, and dates.
@@ -168,25 +185,25 @@ IB_DESIGNABLE
 /**
  The shadow blur radius for the label. A value of 0 indicates no blur, while larger values produce correspondingly larger blurring. This value must not be negative. The default value is 0. 
  */
-@property (nonatomic, assign) IBInspectable CGFloat shadowRadius;
+@property (nonatomic, assign) TTTInspectable CGFloat shadowRadius;
 
 /** 
  The shadow blur radius for the label when the label's `highlighted` property is `YES`. A value of 0 indicates no blur, while larger values produce correspondingly larger blurring. This value must not be negative. The default value is 0.
  */
-@property (nonatomic, assign) IBInspectable CGFloat highlightedShadowRadius;
+@property (nonatomic, assign) TTTInspectable CGFloat highlightedShadowRadius;
 /** 
  The shadow offset for the label when the label's `highlighted` property is `YES`. A size of {0, 0} indicates no offset, with positive values extending down and to the right. The default size is {0, 0}.
  */
-@property (nonatomic, assign) IBInspectable CGSize highlightedShadowOffset;
+@property (nonatomic, assign) TTTInspectable CGSize highlightedShadowOffset;
 /** 
  The shadow color for the label when the label's `highlighted` property is `YES`. The default value is `nil` (no shadow color).
  */
-@property (nonatomic, strong) IBInspectable UIColor *highlightedShadowColor;
+@property (nonatomic, strong) TTTInspectable UIColor *highlightedShadowColor;
 
 /**
  The amount to kern the next character. Default is standard kerning. If this attribute is set to 0.0, no kerning is done at all.
  */
-@property (nonatomic, assign) IBInspectable CGFloat kern;
+@property (nonatomic, assign) TTTInspectable CGFloat kern;
 
 ///--------------------------------------------
 /// @name Acccessing Paragraph Style Attributes
@@ -195,32 +212,32 @@ IB_DESIGNABLE
 /**
  The distance, in points, from the leading margin of a frame to the beginning of the paragraph's first line. This value is always nonnegative, and is 0.0 by default. 
  */
-@property (nonatomic, assign) IBInspectable CGFloat firstLineIndent;
+@property (nonatomic, assign) TTTInspectable CGFloat firstLineIndent;
 
 /**
  @deprecated Use `lineSpacing` instead.
  */
-@property (nonatomic, assign) IBInspectable CGFloat leading DEPRECATED_ATTRIBUTE;
+@property (nonatomic, assign) TTTInspectable CGFloat leading DEPRECATED_ATTRIBUTE;
 
 /**
  The space in points added between lines within the paragraph. This value is always nonnegative and is 0.0 by default.
  */
-@property (nonatomic, assign) IBInspectable CGFloat lineSpacing;
+@property (nonatomic, assign) TTTInspectable CGFloat lineSpacing;
 
 /**
  The minimum line height within the paragraph. If the value is 0.0, the minimum line height is set to the line height of the `font`. 0.0 by default.
  */
-@property (nonatomic, assign) IBInspectable CGFloat minimumLineHeight;
+@property (nonatomic, assign) TTTInspectable CGFloat minimumLineHeight;
 
 /**
  The maximum line height within the paragraph. If the value is 0.0, the maximum line height is set to the line height of the `font`. 0.0 by default.
  */
-@property (nonatomic, assign) IBInspectable CGFloat maximumLineHeight;
+@property (nonatomic, assign) TTTInspectable CGFloat maximumLineHeight;
 
 /**
  The line height multiple. This value is 1.0 by default.
  */
-@property (nonatomic, assign) IBInspectable CGFloat lineHeightMultiple;
+@property (nonatomic, assign) TTTInspectable CGFloat lineHeightMultiple;
 
 /**
  The distance, in points, from the margin to the text container. This value is `UIEdgeInsetsZero` by default.
@@ -235,7 +252,7 @@ IB_DESIGNABLE
  - `right`: `kCTParagraphStyleSpecifierTailIndent`
  
  */
-@property (nonatomic, assign) IBInspectable UIEdgeInsets textInsets;
+@property (nonatomic, assign) TTTInspectable UIEdgeInsets textInsets;
 
 /**
  The vertical text alignment for the label, for when the frame size is greater than the text rect size. The vertical alignment is `TTTAttributedLabelVerticalAlignmentCenter` by default.
@@ -259,7 +276,7 @@ IB_DESIGNABLE
 /**
  The attributed string to apply to the truncation token at the end of a truncated line. Overrides `truncationTokenStringAttributes` and `truncationTokenString`. If unspecified, attributes will fallback to `truncationTokenStringAttributes` and `truncationTokenString`.
  */
-@property (nonatomic, strong) IBInspectable NSAttributedString *attributedTruncationToken;
+@property (nonatomic, strong) TTTInspectable NSAttributedString *attributedTruncationToken;
 
 ///--------------------------
 /// @name Long press gestures
