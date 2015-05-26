@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "0610"
+   LastUpgradeVersion = "0630"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,23 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F877A35B13782AF10022A8AB"
-               BuildableName = "Espressos.app"
-               BlueprintName = "Espressos"
-               ReferencedContainer = "container:Espressos.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9B3C6E61A32C2DB00D43DF9"
-               BuildableName = "TTTAttributedLabelTests.xctest"
-               BlueprintName = "TTTAttributedLabelTests"
+               BlueprintIdentifier = "A52E63FF1B14BBB0002709D4"
+               BuildableName = "TTTAttributedLabel.framework"
+               BlueprintName = "TTTAttributedLabel"
                ReferencedContainer = "container:Espressos.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,26 +28,7 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "E9B3C6E61A32C2DB00D43DF9"
-               BuildableName = "TTTAttributedLabelTests.xctest"
-               BlueprintName = "TTTAttributedLabelTests"
-               ReferencedContainer = "container:Espressos.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F877A35B13782AF10022A8AB"
-            BuildableName = "Espressos.app"
-            BlueprintName = "Espressos"
-            ReferencedContainer = "container:Espressos.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </TestAction>
    <LaunchAction
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
@@ -72,15 +39,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F877A35B13782AF10022A8AB"
-            BuildableName = "Espressos.app"
-            BlueprintName = "Espressos"
+            BlueprintIdentifier = "A52E63FF1B14BBB0002709D4"
+            BuildableName = "TTTAttributedLabel.framework"
+            BlueprintName = "TTTAttributedLabel"
             ReferencedContainer = "container:Espressos.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,15 +57,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable>
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F877A35B13782AF10022A8AB"
-            BuildableName = "Espressos.app"
-            BlueprintName = "Espressos"
+            BlueprintIdentifier = "A52E63FF1B14BBB0002709D4"
+            BuildableName = "TTTAttributedLabel.framework"
+            BlueprintName = "TTTAttributedLabel"
             ReferencedContainer = "container:Espressos.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">
